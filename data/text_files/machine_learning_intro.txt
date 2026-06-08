@@ -1,0 +1,8 @@
+Machine learning
+ is a subset of artificial intelligence where computers learn from data and 
+ identify patterns to make decisions or predictions without being explicitly programmed. Instead of writing rigid, step-by-step instructions, developers feed algorithms large datasets, allowing the system to "learn" the rules automatically.
+ How it WorksTraditional programming requires you to input explicit rules and data into a computer to get an answer. Machine learning flips this approach: you feed the computer data and the corresponding answers, and the computer figures out the rules.
+ Data Input: High-quality historical data (like past emails, medical records, or user preferences) is collected and prepared.
+ Algorithms: Mathematical models (like neural networks or decision trees) process this data to find hidden trends.
+ Training: The model iteratively adjusts itself to minimize errors until it can accurately predict outcomes on new, unseen data.
+ Core CategoriesMachine learning is broadly divided into three main branches based on how the machine "learns" from the data:
