@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [data, setData] = useState<any>(null);
 
   const handleSubmit = async () => {
     const response = await fetch(
@@ -19,9 +20,10 @@ export default function Home() {
       }
     );
 
-    const data = await response.json();
+    const result = await response.json();
+    setData(result);
 
-    console.log(data.answer);
+    console.log(result.answer);
   };
 
   return (
@@ -31,10 +33,20 @@ export default function Home() {
       </header>
 
 
-      <div className="max-w-xl mx-auto">
-        <p>Answers:</p>
-        {data.answer}
-      </div>
+      {data ? (
+        <div className="mt-4 rounded-lg border p-4">
+          <h2 className="font-bold">Answer</h2>
+
+          <p>{data.answer}</p>
+
+          <div className="mt-3 text-sm text-gray-500">
+            <p>Source: {data.metadata.source_file}</p>
+            <p>Score: {data.score.toFixed(3)}</p>
+          </div>
+        </div>
+      ) : (
+        <p className="text-gray-500">Ask a question...</p>
+      )}
 
 
       <div className="max-w-xl mx-auto flex flex-col gap-2 mt-5">

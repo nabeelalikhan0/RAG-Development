@@ -12,9 +12,10 @@ def ask(request):
     query = request.data.get("query")
     rag = RAGService()
     rag.index_directory(r"C:\Users\nabee\Downloads\pdf")
-
-
+    result = rag.ask(query)
 
     return Response({
-        "answer":rag.ask(query)
+        "answer": result[0],
+        "metadata": result[1],
+        "score": result[2]
     })
